@@ -1,0 +1,28 @@
+<h1> Namaskar Dunia </h1>
+
+<p> Name of user: {{ f_name }} </p>
+
+<p>Using safe Filter: {{ stuff|safe }} </p> <!-- using safe will implement the html tags instead of displaying 
+OUTPUT: This is bold: BOLD (where BOLD will be in bold)
+-->
+
+<p> Without using any Filter:{{ stuff }} </p> <!-- witout using any filter(like safe,striptags,etc) html tags are displayed 
+OUTPUT: This is bold: <strong> BOLD </strong>
+-->
+
+<p>Using striptags: {{ stuff|striptags }} </p> <!-- using striptags will remove the html tags instead of displaying 
+OUTPUT: This is bold: BOLD (where BOLD will not be in bold but the tags will to be displayed along it)
+ -->
+
+<p>Using title: {{ stuff|title|safe }} </p> <!-- using title will make the 1st letter of every word to upper case 
+OUTPUT: This Is Bold: BOLD 
+-->
+<!-- using jinja we can perform python functions in Flask -->
+<p> <strong> To-DO LIST </strong> </p>
+{% for things in to_do_list %}
+    {{ things }}<br>
+{% endfor %}
+
+<!-- accessing elements using indexing -->
+<p> 1. {{ to_do_list.0 }} </p> <!-- will print element on  the 0th index(which is the 1st element 
+    i.e: Work ) -->
